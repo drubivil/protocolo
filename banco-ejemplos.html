@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banco interactivo de ejemplos RRPP | UCEM</title>
+  <meta name="description" content="Banco interactivo de ejemplos de Relaciones Públicas para protocolos de intervención.">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-ucem fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/logo-ucem-oficial.png" class="logo-main" alt="UCEM Universidad del Centro de México">
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link active" href="banco-ejemplos.html">Banco de ejemplos</a></li>
+      </ul>
+      <div class="d-flex ms-lg-3">
+        <a href="#explorador" class="btn btn-ucem">PROBAR BANCO</a>
+        <a href="#explorador" class="btn-black-arrow"><i class="bi bi-arrow-down fs-4"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mainMenu" aria-labelledby="mainMenuLabel">
+  <div class="offcanvas-header">
+    <img src="assets/logo-ucem-oficial.png" style="height:58px" alt="UCEM">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+  </div>
+  <div class="offcanvas-body">
+    <nav class="nav flex-column">
+      <a class="nav-link" href="index.html">Inicio</a>
+      <a class="nav-link" href="banco-ejemplos.html">Banco de ejemplos</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-8">
+        <span class="hero-kicker"><i class="bi bi-diagram-3"></i> Banco interactivo de ejemplos RRPP</span>
+        <h1 class="hero-title">Explora ejemplos por <strong>línea de intervención</strong></h1>
+        <p class="hero-subtitle">
+          Selecciona una línea de intervención y después un tipo de organización recomendado. El sistema generará un ejemplo sintetizado con énfasis en la alineación entre objetivos, estrategias y tácticas.
+        </p>
+        <div class="d-flex flex-wrap mt-4">
+          <a class="btn btn-ucem" href="#explorador">COMENZAR</a>
+          <a class="btn-black-arrow" href="#explorador"><i class="bi bi-arrow-down fs-4"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="mini-card">
+          <i class="bi bi-check2-circle"></i>
+          <h4 class="fw-bold">Modelo selectivo</h4>
+          <p class="mb-0">16 líneas de intervención con 4 organizaciones recomendadas por línea: 64 combinaciones posibles.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="mini-card">
+          <i class="bi bi-1-circle"></i>
+          <h5 class="fw-bold">Elige la línea</h5>
+          <p class="mb-0">Reputación, crisis, branding, comunicación interna, posicionamiento, comunidad y más.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mini-card">
+          <i class="bi bi-2-circle"></i>
+          <h5 class="fw-bold">Elige organización</h5>
+          <p class="mb-0">El sistema solo muestra opciones recomendadas para evitar combinaciones poco coherentes.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mini-card">
+          <i class="bi bi-3-circle"></i>
+          <h5 class="fw-bold">Revisa la alineación</h5>
+          <p class="mb-0">El centro del ejemplo es la relación entre 3 objetivos, 3 estrategias y 3 tácticas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="explorador">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-4">
+        <aside class="filter-card">
+          <h2 class="h4 fw-bold text-success">Explorador de ejemplos</h2>
+          <p class="text-muted">Selecciona una línea y después una organización recomendada.</p>
+
+          <div class="mb-3">
+            <label class="form-label" for="lineaSelect">1. Línea de intervención</label>
+            <select id="lineaSelect" class="form-select">
+              <option value="">Selecciona una línea</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="orgSelect">2. Tipo de organización</label>
+            <select id="orgSelect" class="form-select" disabled>
+              <option value="">Primero selecciona una línea</option>
+            </select>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button id="copyBtn" class="btn btn-ucem" data-copy-target="#copyContent" disabled>
+              <i class="bi bi-clipboard"></i> Copiar ejemplo
+            </button>
+            <button id="clearBtn" class="btn btn-outline-ucem" type="button">
+              Limpiar selección
+            </button>
+          </div>
+          <div id="copyAlert" class="copy-alert">Ejemplo copiado al portapapeles.</div>
+
+          <hr>
+          <p class="small text-muted mb-0">
+            Esta página es una prueba independiente. Si se valida, se integrará al sistema completo como punto 7 del Módulo C.
+          </p>
+        </aside>
+      </div>
+      <div class="col-lg-8">
+        <div id="emptyState" class="empty-state">
+          <i class="bi bi-diagram-3 fs-1 text-success"></i>
+          <h3 class="h4 fw-bold mt-3">Selecciona una línea y una organización</h3>
+          <p class="mb-0 text-muted">Aquí aparecerá el ejemplo sintetizado con problema, objetivo general, alineación operativa, indicadores e instrumentos.</p>
+        </div>
+        <div id="result" style="display:none;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <img src="assets/logo-ucem-oficial.png" style="height:70px; background:#fff; padding:6px;" alt="UCEM" class="mb-3">
+        <p class="text-white-50 mb-0">Banco interactivo de ejemplos de Relaciones Públicas para protocolos de intervención.</p>
+      </div>
+      <div class="col-lg-6 text-lg-end">
+        <a href="#explorador">Explorador</a>
+        <p class="small text-white-50 mt-2 mb-0">Versión de prueba · Banco 7B-2</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/banco-ejemplos.js"></script>
+</body>
+</html>
